@@ -27,9 +27,8 @@ a{
     background-color: rgb(5, 129, 182);
     color: white;
     border-radius: 40px;
-    margin:auto;
     padding: 10px;
     padding-left: 80px;
     padding-right: 80px;
-    
+    margin-left: 50px;
 }
