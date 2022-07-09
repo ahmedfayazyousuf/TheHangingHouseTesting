@@ -1,6 +1,4 @@
-*{
-    align-items: center;
-}
+
 body{
     background-color: #29024a;
     align-items: center;
@@ -19,6 +17,8 @@ body{
     border-radius: 5px;
     display: grid;
     grid-template-columns: auto auto auto auto;
+    padding: 1px;
+    margin: auto;
     background-color:beige;
 }
 h1{

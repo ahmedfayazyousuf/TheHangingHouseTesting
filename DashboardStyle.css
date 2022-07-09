@@ -14,13 +14,15 @@ form{
     align-content: center;
     background-color: aliceblue;
     border-radius: 40px;
-    padding: 100px;
+    padding: 70px;
 }
 input{
     height: 40px;
     width: 300px;
+    border-color: orange;
     background-color:aliceblue;
     border-radius: 40px;
+    border-width: 5px;
     text-align: center;
 }
 a{
@@ -30,5 +32,6 @@ a{
     padding: 10px;
     padding-left: 80px;
     padding-right: 80px;
+    margin-top: 200px;
     margin-left: 50px;
 }
