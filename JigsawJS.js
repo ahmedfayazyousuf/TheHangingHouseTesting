@@ -1,12 +1,11 @@
-var r = 4, c = 4, currentTile, otherTile;
+var r = 4, c = 4, currentPuzzle, otherPuzzle, puzzle;
 
 window.onload = function(){
-    for(i=0;i<r;i++)0524045757
-    
+    for(let i=0;i<r;i++)    
     {
-        for(j=0;j<c;j++)
-        tile = document.createElement("img");
-        tile.src = "./images/5.jpg"
-        document.getElementById("grid").append(tile);
+        for(let j=0;j<c;j++)
+        puzzle = document.createElement("img");
+        puzzle.src = "./images/blank.jpg"
+        document.getElementById("grid").append(puzzle);
     }
 }

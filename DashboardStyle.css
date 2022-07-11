@@ -25,13 +25,12 @@ input{
     border-width: 5px;
     text-align: center;
 }
-a{
-    background-color: rgb(5, 129, 182);
-    color: white;
-    border-radius: 40px;
-    padding: 10px;
-    padding-left: 80px;
-    padding-right: 80px;
-    margin-top: 200px;
-    margin-left: 50px;
+button
+{
+    width: 230px;
+    height: 40px;
+    border-radius: 20px;
+    border-color: black;
+    background-color: rgb(117, 180, 244);
+    margin-left: 36px;
 }

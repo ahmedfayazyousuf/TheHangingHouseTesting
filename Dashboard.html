@@ -5,20 +5,19 @@
         <link rel="stylesheet" href="DashboardStyle.css">
     </head>
     <body>
-        
-        <form>
+
+        <form action = "" id="PlayerForm">
             <img src="thh.png" alt="Girl in a jacket" width="300" height="180"><br><br><br>
-            <label for="name"></label>
             <input type="text" id="name" placeholder="NAME" required><br><br>
 
-            <label for="email"></label>
             <input type="text" id="email" placeholder="EMAIL" required><br><br>
 
-            <label for="mobno"></label>
             <input type="text" id="mobno" placeholder="MOBILE NO" required><br><br>
-            
-            <a href="JigsawHTML.html">Submit</a> 
+             
+            <button onclick = "writeDatatoFirebase()">Submit</button>
         </form>
-       
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+        <script src="./DashboardJS.js"></script>
     </body>
 </html>
