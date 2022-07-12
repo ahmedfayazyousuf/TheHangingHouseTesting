@@ -1,23 +1,68 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>Dashboard</title>
         <link rel="stylesheet" href="DashboardStyle.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     </head>
+
     <body>
+        <form action="JigsawHTML.html">
+        <img src="thh.png" alt="The Hanging House Logo" width="300" height="180"><br><br><br>
+            
+        <input type="name" id="name" placeholder="NAME" required><br><br>
+        <input type="email" id="email" placeholder="EMAIL" required><br><br>
+        <input type="mobno" id="mobno" placeholder="MOBILE NO" required><br><br>
+        
+        <a href=>
+            <button>Submit</button>
+        </a>
+        
+        
 
-        <form action = "" id="PlayerForm">
-            <img src="thh.png" alt="Girl in a jacket" width="300" height="180"><br><br><br>
-            <input type="text" id="name" placeholder="NAME" required><br><br>
-
-            <input type="text" id="email" placeholder="EMAIL" required><br><br>
-
-            <input type="text" id="mobno" placeholder="MOBILE NO" required><br><br>
-             
-            <button onclick = "writeDatatoFirebase()">Submit</button>
         </form>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
-        <script src="./DashboardJS.js"></script>
+        <script type="module">
+            //this script block is for writing the user data to firebase.
+        
+        
+        
+        
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+        
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+            apiKey: "AIzaSyDYt51uZrDZFej-2QKBTmdPKtXD2t5iE9M",
+            authDomain: "the-hanging-house-puzzle.firebaseapp.com",
+            databaseURL: "https://the-hanging-house-puzzle-default-rtdb.firebaseio.com",
+            projectId: "the-hanging-house-puzzle",
+            storageBucket: "the-hanging-house-puzzle.appspot.com",
+            messagingSenderId: "674999013395",
+            appId: "1:674999013395:web:81b47bb7e91d091483efe6",
+            measurementId: "G-3SSGBDPD81"
+            };
+        
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+        
+        
+        
+            firebase.initializeApp(firebaseConfig);
+            var firebaseRef = firebase.database().ref('userdata');
+        
+            document.querySelector('#submit').addEventListener('click', ()=>{
+                const name = document.getElementById('name');
+                const email = document.getElementById('email');
+                const mobno = document.getElementById('mobno');
+                firebaseRef.set(email);
+            })
+        </script>
     </body>
 </html>

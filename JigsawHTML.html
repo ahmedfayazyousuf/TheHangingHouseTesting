@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Jigsaw Puzzle Game</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>XXX</title>
         <link rel="stylesheet" href="JigsawStyle.css">
         <script src="JigsawJS.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
+
     <body>
-        <h1>4x4 Jigsaw Puzzle Game</h1>
-        <h3>Maximum Time Allowance: 60 Seconds</h3>
-        <h4>Scoring Formula: 3 * Time Taken To Complete Puzzle</h4>
-        <h3>Time: <span id="seconds">0</span></h3>
-
-        <div id="grid"></div>
-        <div id="puzzles"></div>
-        
+        <h2>The Hanging House - Jigsaw Puzzle Game</h2>
+        <img src="Images/image.jpg" alt="The Hanging House Logo in circle border" width="120" height="120"><br><br>     
+        <button id="startbutton" onclick="starttimer()">START TIMER</button>
+        <div id="timer" hidden>Time Remaining: 60</div>
+        <div id="board"></div>
+        <div id="pieces"></div>
+        <button id="submitscore" hidden onclick="scorecalculator()">SUBMIT PUZZLE</button>
     </body>
-
 </html>
+
+
