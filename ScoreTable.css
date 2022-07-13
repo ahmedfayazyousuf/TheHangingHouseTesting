@@ -16,20 +16,18 @@ form{
     border-radius: 40px;
     padding: 70px;
 }
-input{
-    height: 40px;
-    width: 300px;
-    border-color: orange;
-    background-color:aliceblue;
-    border-radius: 40px;
-    border-width: 5px;
-    text-align: center;
-}
 button
 {
     width: 230px;
     height: 40px;
     border-radius: 20px;
-    background-color: rgb(117, 180, 244);
-    margin-left: 36px;
+    background-color: rgb(56, 56, 167);
+    color: white;
+    margin-left: 39px;
+    margin-top: 20px;
+}
+
+table, th, td 
+{
+    border:1px solid #29024A;
 }

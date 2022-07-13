@@ -10,13 +10,23 @@
 
     <body>
         <h2>The Hanging House - Jigsaw Puzzle Game</h2>
-        <img src="Images/image.jpg" alt="The Hanging House Logo in circle border" width="120" height="120"><br><br>     
-        <button id="startbutton" onclick="starttimer()">START TIMER</button>
+        <img src="Images/image.jpg" alt="The Hanging House Logo in circle border" width="120" height="120"><br><br>    
+        <button id ="timer" onclick="starttimer()">START</button>
         <div id="timer" hidden>Time Remaining: 60</div>
-        <div id="board"></div>
-        <div id="pieces"></div>
-        <button id="submitscore" hidden onclick="scorecalculator()">SUBMIT PUZZLE</button>
+        <div id="puzzlegrid"></div>
+        <div id="puzzlepieces"></div>
+        
+        <button id="checkscore" hidden onclick="scorecalculator()">Press to check your score!</button>
+        <button id="submitscore" hidden></button>
+
+        <form action="ScoreTable.html">
+            <button id="leaderboard" hidden>Submit to LeaderBoard</button>
+        </form>
+
+       
+    
     </body>
 </html>
+
 
 

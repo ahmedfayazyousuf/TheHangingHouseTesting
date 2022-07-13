@@ -1,93 +1,80 @@
-var rows = 4;
-var columns = 4;
+var rows = 4, columns = 4;
+var selectedpuzzle, otherpuzzle, timeremaining = 60, timerInterval, userscore = 0;
 
-var currTile;
-var otherTile;
-
-var turns = 0;
-var timeremaining = 60;
-var timerInterval;
-var userscore = 0;
-
-
-window.onload = function() {
-    for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < columns; c++) {
-            //<img>
+window.onload = function() 
+{
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < columns; j++) {
             let tile = document.createElement("img");
             tile.src = "./images/blank.jpg";
 
-            //DRAG FUNCTIONALITY
-            tile.addEventListener("dragstart", dragStart); //click on image to drag
-            tile.addEventListener("dragover", dragOver);   //drag an image
-            tile.addEventListener("dragenter", dragEnter); //dragging an image into another one
-            tile.addEventListener("dragleave", dragLeave); //dragging an image away from another one
-            tile.addEventListener("drop", dragDrop);       //drop an image onto another one
-            tile.addEventListener("dragend", dragEnd);      //after you completed dragDrop
+            
+            tile.addEventListener("dragleave", dragLeave); 
+            tile.addEventListener("dragend", dragEnd); 
+            tile.addEventListener("drop", dragDrop);     
+            tile.addEventListener("dragstart", dragStart); 
+            tile.addEventListener("dragover", dragOver);  
+            tile.addEventListener("dragenter", dragEnter); 
 
-            document.getElementById("board").append(tile);
+            document.getElementById("puzzlegrid").append(tile);
         }
     }
 
-    //pieces
-    let pieces = [];
-    for (let i=1; i <= rows*columns; i++) {
-        pieces.push(i.toString()); //put "1" to "25" into the array (puzzle images names)
+    let puzzlepieces = [];
+    for (let i=1; i <= rows*columns; i++) 
+    {
+        puzzlepieces.push(i.toString());
     }
-    pieces.reverse();
+    puzzlepieces.reverse();
 
-    for (let i = 0; i < pieces.length; i++) {
+    for (let i = 0; i < puzzlepieces.length; i++) 
+    {
         let tile = document.createElement("img");
-        tile.src = "./images/" + pieces[i] + ".jpg";
+        tile.src = "./images/" + puzzlepieces[i] + ".jpg";
 
-        //DRAG FUNCTIONALITY
-        tile.addEventListener("dragstart", dragStart); //click on image to drag
-        tile.addEventListener("dragover", dragOver);   //drag an image
-        tile.addEventListener("dragenter", dragEnter); //dragging an image into another one
-        tile.addEventListener("dragleave", dragLeave); //dragging an image away from another one
-        tile.addEventListener("drop", dragDrop);       //drop an image onto another one
-        tile.addEventListener("dragend", dragEnd);      //after you completed dragDrop
+    
+        tile.addEventListener("dragleave", dragLeave); 
+        tile.addEventListener("dragend", dragEnd); 
+        tile.addEventListener("drop", dragDrop);     
+        tile.addEventListener("dragstart", dragStart); 
+        tile.addEventListener("dragover", dragOver);  
+        tile.addEventListener("dragenter", dragEnter); 
 
-        document.getElementById("pieces").append(tile);
+        document.getElementById("puzzlepieces").append(tile);
     }
 }
-
-//DRAG TILES
-function dragStart() {
-    currTile = this; //this refers to image that was clicked on for dragging
+function dragStart() 
+{
+    selectedpuzzle = this; 
 }
-
-function dragOver(e) {
+function dragOver(e) 
+{
     e.preventDefault();
 }
-
-function dragEnter(e) {
+function dragEnter(e) 
+{
     e.preventDefault();
 }
-
-function dragLeave() {
-
+function dragLeave() 
+{
 }
-
-function dragDrop() {
-    otherTile = this; //this refers to image that is being dropped on
+function dragDrop() 
+{
+    otherpuzzle = this;
 }
-
-function dragEnd() {
-    let currImg = currTile.src;
-    let otherImg = otherTile.src;
-    currTile.src = otherImg;
-    otherTile.src = currImg;
-
-    turns += 1;
-    document.getElementById("turns").innerText = turns;
+function dragEnd() 
+{
+    let currImg = selectedpuzzle.src;
+    let otherImg = otherpuzzle.src;
+    selectedpuzzle.src = otherImg;
+    otherpuzzle.src = currImg;
 }
-
-
 function starttimer()
 {
-    document.getElementById("startbutton").hidden = true;
     document.getElementById("submitscore").hidden = false;
+    document.getElementById("checkscore").hidden = false;
+    document.getElementById("leaderboard").hidden = false;
+    
     let timer = document.getElementById("timer");
     timer.hidden = false;
     timerInterval = setInterval(function(){
@@ -99,10 +86,9 @@ function starttimer()
         }
     },1000) 
 }
-
 function scorecalculator()
 {
-    if(timeremaining==0)
+    if(timeremaining<=0)
     {
         submitscore.innerHTML = "Your time exceeded 60 seconds, Better Luck Next Time!"; 
     }
@@ -114,5 +100,5 @@ function scorecalculator()
 
 function verifypuzzle()
 {
-
+    //was supposed to make a function that checks whether the puzzle is correct.
 }
